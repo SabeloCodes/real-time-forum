@@ -1,0 +1,6 @@
+### some steps to achive this project 
+//there will be only one html template so the content of-
+ the page should be modified useing js DOM.
+
+// first finish the frontend then jump to backend.
+// 

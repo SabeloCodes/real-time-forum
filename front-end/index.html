@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"
+    <title>Real-Time-Fourm </title>
+</head>
+<body>
+
+    <header>
+        <!-- login page section -->
+       <section class="login-section">
+        <div id="login-cover" class="cover cover-hide">
+            <h1>Welcome!</h1>
+            <h3>Already have an account?</h3>
+            <button type="button" class="switch-btn" onclick="location.reload()">Login</button>
+        </div>
+        <div id="login-form" class="form fade-in-element">
+            <h1>Login</h1>
+            <form action="" method="post">
+                <input type="text" name="user-name" class="input-box" placeholder="NickName or Email">
+                <input type="password" name="user-password" class="input-box" placeholder="Password">
+                <input type="button" name="login-btn" class="btn" value="Login">
+            </form>
+        </div>
+       </section>
+
+       <!-- SignUP page section -->
+       <section class="sign-up-section">
+        <div id="sign-up-cover" class="cover fade-in-element">
+            <h1>Welcome !</h1>
+            <h3>Don't have an account ?</h3>
+            <button type="button" class="switch-btn" onclick="SwitchSignup()">Signup</button>
+        </div>
+        <div id="signup-form" class="form form-hide">
+            <h1>Signup</h1>
+            <form action="" method="post">
+                <input type="text" name="nick-name" class="input-box" placeholder="Nickname">
+                <input type="text" name="first-name" class="input-box" placeholder="First Name">
+                <input type="text" name="last-name" class="input-box" placeholder="Last Name">
+                <input type="email" name="user-email" class="input-box" placeholder="Email">
+                <input type="number" name="user-age" class="input-box" placeholder="Age">
+                <input type="text" name="user-gender" class="input-box" placeholder="Gender">
+                <input type="password" name="user-password" class="input-box" placeholder="Password">
+                <input type="password" name="user-Cpassword" class="input-box" placeholder="Confirm Password">
+                <input type="button" name="signup-btn" class="btn" value="Signup">
+            </form>
+        </div>
+       </section>
+        <div class="search-box">
+            <div>
+                <select name="" id="">
+                    <option value="everything">Everything</option>
+                    <option value="title">Title</option>
+                    <option value="description">Discription</option>
+                </select>
+                <input type="text" name="q" id="" placeholder="search....">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+
+    </header>
+
+    <div class="container">
+        
+        <div class="subfourm">
+            <div class="forum">
+            <div class="username">username</div>
+            <div class="subforum-title">This is title
+                <div class="post">this is post</div>
+                <div class="reaction">
+                    <button class="btn" id="like">like</button>
+                    <button class="btn" id="dislike">dislike</button>
+                    <div class="comment">
+                        <button class="btn" id="comment">comment</button>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="status"> this sis the s </div>
+           </div>
+          
+        </div>
+          
+        <div class="subfourm">
+            <div class="subforum-title">
+                <h1>Fourm</h1>
+                <span></span>
+            </div>
+            <div class="subfourm-row">
+                <div class="subforum-icon subfourm-coloum center">
+                <!-- <i class="icon">F</i> -->
+            </div>
+            <div class="subforum-discription subfourm-coloum">
+                <h2>fourm-title:</h2>
+                <p>this is a deiscpthi that i will nesd to chatendg in clase of fhth fafppa is ghis.</p>
+                <p>hofihsihefhhdfehfhihihfshihfehd shfoehfh  hiohishfn hsofhi fhhef fhoiehf</p>
+            </div>
+            <div class="subforum-stats subfourm-coloum center">
+                <span>12 posts | 15 Topics</span>
+            </div>
+            <div class="subforum-info subfourm-coloum">
+                Last post by jsutuser
+                <br>
+                on 11 jan 2022
+            </div>
+
+
+        </div>
+        <!-- more -->
+        <!-- <div class="subfourm">
+            <div class="subforum-title">
+                <h1>Fourm</h1>
+                <span></span>
+            </div>
+            <div class="subfourm-row">
+                <div class="subforum-icon subfourm-coloum center"
+                <i class="icon">F</i>
+            </div>
+            <div class="subforum-discription subfourm-coloum">
+                <h2>fourm-title:</h2>
+                <p>this is a deiscpthi that i will nesd to chatendg in clase of fhth fafppa is ghis.</p>
+            </div>
+            <div class="subforum-stats subfourm-coloum center">
+                <span>12 posts | 15 Topics</span>
+            </div>
+            <div class="subforum-info subfourm-coloum">
+                Last post by jsutuser
+                <br>
+                on 11 jan 2022
+            </div>
+
+
+        </div>
+
+        <div class="subfourm">
+            <div class="subforum-title">
+                <h1>Fourm</h1>
+                <span></span>
+            </div>
+            <div class="subfourm-row">
+                <div class="subforum-icon subfourm-coloum center"
+                <i class="icon">F</i>
+            </div>
+            <div class="subforum-discription subfourm-coloum">
+                <h2>fourm-title:</h2>
+                <p>this is a deiscpthi that i will nesd to chatendg in clase of fhth fafppa is ghis.</p>
+            </div>
+            <div class="subforum-stats subfourm-coloum center">
+                <span>12 posts | 15 Topics</span>
+            </div>
+            <div class="subforum-info subfourm-coloum">
+                Last post by jsutuser
+                <br>
+                on 11 jan 2022
+            </div>
+
+
+        </div>
+
+        <div class="subfourm">
+            <div class="subforum-title">
+                <h1>Fourm</h1>
+                <span></span>
+            </div>
+            <div class="subfourm-row">
+                <div class="subforum-icon subfourm-coloum center"
+                <i class="icon">F</i>
+            </div>
+            <div class="subforum-discription subfourm-coloum">
+                <h2>fourm-title:</h2>
+                <p>this is a deiscpthi that i will nesd to chatendg in clase of fhth fafppa is ghis.</p>
+            </div>
+            <div class="subforum-stats subfourm-coloum center">
+                <span>12 posts | 15 Topics</span>
+            </div>
+            <div class="subforum-info subfourm-coloum">
+                Last post by jsutuser
+                <br>
+                on 11 jan 2022
+            </div>
+
+
+        </div>
+
+        <div class="subfourm">
+            <div class="subforum-title">
+                <h1>Fourm</h1>
+                <span></span>
+            </div>
+            <div class="subfourm-row">
+                <div class="subforum-icon subfourm-coloum center"
+                <i class="icon">F</i>
+            </div>
+            <div class="subforum-discription subfourm-coloum">
+                <h2>fourm-title:</h2>
+                <p>this is a deiscpthi that i will nesd to chatendg in clase of fhth fafppa is ghis.</p>
+            </div>
+            <div class="subforum-stats subfourm-coloum center">
+                <span>12 posts | 15 Topics</span>
+            </div>
+            <div class="subforum-info subfourm-coloum">
+                Last post by jsutuser
+                <br>
+                on 11 jan 2022
+            </div>
+
+
+        </div> -->
+        <!-- more -->
+ </div>
+
+ <!-- Fourm info -->
+ <div class="forum-info">
+    <div>
+        My Fourm -stats <i class="fa fa -bar-chart"></div>
+    </div>
+    <div>
+        <span><u>5,444</u> Posts in <u>1,233</u> Topics by <u>54,222</u> Users</span><br>
+        <span>Latest Post: <b> <a href="#"> Random Post</a></b> On 13 Dec 2022 by <a href="#"> RandomUser</a></span>
+    </div>
+ </div>
+
+ <footer>
+    <span>  </span>
+ </footer>
+    
+    <script src="/index.js"> </script>
+</body>
+</html>
