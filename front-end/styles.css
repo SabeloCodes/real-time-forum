@@ -1,0 +1,108 @@
+/* Set up the grid container */
+body {
+  font-family: "Ubuntu", sans-serif;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* Header, main content, and footer */
+  min-height: 100vh; /* Make sure the grid takes up the entire viewport height */
+  background-color: #94abbd;
+  color: #f3f3f3;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #556e84;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+
+.logo {
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+/* .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: #e5926c; /* Set the background color to match the logo image
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+} */
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Add a border to each nav list element */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Make the background color opaque */
+  border-radius: 30px;
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  color: #f3f3f3;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #935035;
+  text-decoration: underline;
+}
+
+/* Main content styles */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  margin-bottom: 50px; /* Margin-bottom to create space between the main content and footer */
+}
+
+/* Footer styles */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background-color: #556e84;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav li {
+    margin: 0.5rem 0;
+  }
+}
