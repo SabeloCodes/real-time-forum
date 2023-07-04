@@ -11,7 +11,7 @@ body {
 /* Header styles */
 header {
   display: flex;
-  align-items: center;
+  align-items: flex-start; /* Change to align items at the top */
   justify-content: space-between;
   padding: 1rem;
   background-color: #556e84;
@@ -19,22 +19,30 @@ header {
   border-radius: 30px;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding: 10px; /* Add padding to the logo container */
+}
+
 .logo {
   width: 200px;
   height: 100px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  border: 3px solid #fff; /* Add white border to the logo */
+  border-radius: 10px; /* Apply border radius to the logo */
+  padding: 10px; /* Add padding to the logo */
 }
 
-/* .navbar {
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #e5926c; /* Set the background color to match the logo image
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-} */
+}
 
 nav ul {
   display: flex;
@@ -45,30 +53,24 @@ nav ul {
   padding: 0;
 }
 
-nav li {
+.nav-list li {
   margin: 0 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.5); /* Add a border to each nav list element */
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.5
-  ); /* Make the background color opaque */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 30px;
+  text-align: center;
+  padding: 0.5rem 1rem; /* Add padding to create space between the li text and the border */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition properties */
 }
 
-nav li {
-  margin: 0 1rem;
+.nav-list li:hover {
+  background-color: #ffcdb2; /* Change the background color on hover */
+  transform: scale(1.1); /* Apply a scale transform on hover */
 }
 
-nav a {
-  color: #f3f3f3;
-  text-decoration: none;
-}
-
-nav a:hover {
-  color: #935035;
-  text-decoration: underline;
+.nav-list li a {
+  color: #fff; /* Set the link color to white */
+  text-decoration: none; /* Remove the underline */
 }
 
 /* Main content styles */
@@ -97,12 +99,13 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  nav ul {
+  .nav-list {
     flex-direction: column;
     align-items: center;
   }
 
-  nav li {
+  .nav-list li {
     margin: 0.5rem 0;
+    margin-left: 0;
   }
 }
