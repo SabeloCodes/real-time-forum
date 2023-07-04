@@ -55,11 +55,11 @@ nav ul {
 
 .nav-list li {
   margin: 0 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 3px solid #fff; /* Add white border to the logo */
   background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 30px;
+  border-radius: 10px; /* Apply border radius */
   text-align: center;
-  padding: 0.5rem 1rem; /* Add padding to create space between the li text and the border */
+  padding: 10px; /* Add padding to create space between the li text and the border */
   transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition properties */
 }
 
@@ -71,6 +71,13 @@ nav ul {
 .nav-list li a {
   color: #fff; /* Set the link color to white */
   text-decoration: none; /* Remove the underline */
+}
+
+.nav-list li .nav-icon {
+  width: 64px; /* Adjust the width as needed */
+  height: 64px; /* Adjust the height to match the logo */
+  margin-left: 2 rem; /* Add spacing between the text and the icon */
+  vertical-align: middle; /* Align the icon vertically */
 }
 
 /* Main content styles */
