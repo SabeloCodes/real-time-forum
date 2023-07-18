@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  background: #94abbd;
+  color: #f3f3f3;
+}
+
+.content {
+  width: 330px;
+  padding: 40px 30px;
+  background: #556e84;
+  border-radius: 10px;
+  box-shadow: -3px -3px 7px rgba(0, 0, 0, 0.1);
+}
+
+.content .text {
+  font-size: 33px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  color: #f3f3f3;
+  text-align: center;
+}
+
+.field {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.field:nth-child(2) {
+  margin-top: 20px;
+}
+
+.field input {
+  height: 100%;
+  width: 100%;
+  padding-left: 45px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  background: #556e84;
+  color: #f3f3f3;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.2);
+}
+
+.field input:focus {
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1),
+    inset -1px -1px 2px rgba(255, 255, 255, 0.2);
+}
+
+.field div {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.5);
+  width: 50px;
+  line-height: 50px;
+}
+
+.field label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 45px;
+  pointer-events: none;
+  color: #f3f3f3;
+}
+
+.field input:valid ~ label {
+  opacity: 0;
+}
+
+.button {
+  margin: 15px 0;
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  font-weight: 600;
+  background: #556e84;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #f3f3f3;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
+    -5px -5px 10px rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease-in-out; /* Added transition */
+}
+
+.button:hover {
+  background-color: #4b6377;
+}
+
+.button:focus {
+  color: #ffcdb2;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+    inset -5px -5px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Form icons */
+.name-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url("./front-end/images/icons/name.png") no-repeat center;
+  background-size: contain;
+}
+
+.puzzle-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url("./front-end/images/icons/puzzle.png") no-repeat center;
+  background-size: contain;
+}
+
+.lock-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url("./front-end/images/icons/padlock.png") no-repeat center;
+  background-size: contain;
+}
