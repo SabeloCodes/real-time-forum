@@ -64,7 +64,7 @@ nav ul {
 }
 
 .nav-list li:hover {
-  background-color: #ffcdb2; /* Change the background color on hover */
+  background-color: #ffa66b; /* Change the background color on hover */
   transform: scale(1.1); /* Apply a scale transform on hover */
 }
 
