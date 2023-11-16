@@ -1,41 +1,108 @@
-/* Font import */
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+/* styles.css */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
+/* Global CSS variables */
+:root {
+  --primary: #ff8d00; /* Primary color */
+  --box-shadow-vertical: 0 3px 6px 6px; /* Vertical box shadow */
+  --dark: #111922; /* Dark background color */
+  --grey-light: #a1a2a3; /* Light grey color */
 }
 
-html,
+/* Set default styles for the body */
 body {
+  font-family: "Libre Franklin", sans-serif; /* Use Libre Franklin font or fallback sans-serif */
+  background: var(--dark); /* Set the background color to dark */
+}
+
+/* Styling for the modal overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  z-index: 10; /* Place overlay above other content */
 }
 
-body {
-  display: grid;
-  place-items: center;
-  background: #94abbd;
-  color: #f3f3f3;
+/* Styling for the modal container */
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11; /* Place container above overlay */
+  display: none; /* Hide the container by default */
 }
 
+/* Styling for the modal content */
 .content {
   width: 330px;
   padding: 40px 30px;
-  background: #556e84;
+  background: var(--dark);
   border-radius: 10px;
-  box-shadow: -3px -3px 7px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow-vertical) var(--primary); /* Apply box shadow */
 }
 
-.content .text {
+/* Display the modal container when open */
+.modal-container.open {
+  display: block;
+}
+
+/* Styling for form controls (input fields, etc.) */
+.form-control {
+  border: 0;
+  border-bottom: 1px solid var(--grey-light);
+  color: var(--primary);
+  background: none;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+/* Highlight form controls on focus or hover */
+.form-control:focus,
+.form-control:focus:hover {
+  border-bottom: 1px solid var(--primary);
+}
+
+/* Styling for form groups (label and input container) */
+.form-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+/* Styling for form labels */
+.form-group > label {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: var(--grey-light);
+  transform-origin: 0 0;
+  transform: scale(1.4);
+  pointer-events: none;
+  position: relative;
+  z-index: 5;
+}
+
+/* Styling for form inputs */
+.form-group > input {
+  width: 100%;
+}
+
+/* Display label when input is not empty */
+.form-group.not-empty > label {
+  transform: none;
+}
+
+/* Styling for large text elements */
+.text {
   font-size: 33px;
   font-weight: 600;
   margin-bottom: 35px;
-  color: #f3f3f3;
-  text-align: center; /* To center the text */
+  color: var(--primary);
+  text-align: center;
 }
 
+/* Styling for input fields and icons */
 .field {
   height: 50px;
   width: 100%;
@@ -43,10 +110,12 @@ body {
   position: relative;
 }
 
+/* Spacing for second input field */
 .field:nth-child(2) {
   margin-top: 20px;
 }
 
+/* Styling for input fields */
 .field input {
   height: 100%;
   width: 100%;
@@ -54,18 +123,20 @@ body {
   outline: none;
   border: none;
   font-size: 18px;
-  background: #556e84;
-  color: #f3f3f3;
+  background: var(--dark);
+  color: var(--primary);
   border-radius: 10px;
   box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
     inset -5px -5px 10px rgba(255, 255, 255, 0.2);
 }
 
+/* Highlight input field on focus */
 .field input:focus {
   box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1),
     inset -1px -1px 2px rgba(255, 255, 255, 0.2);
 }
 
+/* Styling for icons within input fields */
 .field div {
   position: absolute;
   color: rgba(255, 255, 255, 0.5);
@@ -73,34 +144,17 @@ body {
   line-height: 50px;
 }
 
+/* Styling for labels within input fields */
 .field label {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 45px;
   pointer-events: none;
-  color: #f3f3f3;
+  color: var(--primary);
 }
 
-.field input:valid ~ label {
-  opacity: 0;
-}
-
-.forgot-pass {
-  text-align: left;
-  margin: 10px 0 10px 5px;
-}
-
-.forgot-pass a {
-  font-size: 16px;
-  color: #ffcdb2;
-  text-decoration: none;
-}
-
-.forgot-pass:hover a {
-  text-decoration: underline;
-}
-
+/* Styling for buttons */
 button {
   margin: 15px 0;
   width: 100%;
@@ -108,50 +162,55 @@ button {
   font-size: 18px;
   line-height: 50px;
   font-weight: 600;
-  background: #556e84;
+  background: var(--dark);
   border-radius: 10px;
   border: none;
   outline: none;
   cursor: pointer;
-  color: #f3f3f3;
+  color: var(--primary);
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1),
     -5px -5px 10px rgba(255, 255, 255, 0.2);
 }
 
+/* Highlight button on focus */
 button:focus {
-  color: #ffcdb2;
+  color: var(--primary);
   box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
     inset -5px -5px 10px rgba(255, 255, 255, 0.2);
 }
 
+/* Styling for sign-up text */
 .sign-up {
   margin: 10px 0;
-  color: #f3f3f3;
+  color: var(--primary);
   font-size: 16px;
 }
 
+/* Styling for sign-up links */
 .sign-up a {
-  color: #ffcdb2;
+  color: var(--primary);
   text-decoration: none;
 }
 
+/* Styling for sign-up links on hover */
 .sign-up a:hover {
   text-decoration: underline;
 }
 
-/* Form icons */
+/* Styling for account icon */
 .account-icon {
   position: absolute;
   width: 50px;
   height: 50px;
-  background: url("./front-end/images/icons/account.png") no-repeat center;
+  background: url("/front-end/images/icons/account.png") no-repeat center;
   background-size: contain;
 }
 
+/* Styling for lock icon */
 .lock-icon {
   position: absolute;
   width: 50px;
   height: 50px;
-  background: url("./front-end/images/icons/padlock.png") no-repeat center;
+  background: url("/front-end/images/icons/padlock.png") no-repeat center;
   background-size: contain;
 }

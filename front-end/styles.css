@@ -1,118 +1,66 @@
-/* Set up the grid container */
-body {
-  font-family: "Ubuntu", sans-serif;
-  display: grid;
-  grid-template-rows: auto 1fr auto; /* Header, main content, and footer */
-  min-height: 100vh; /* Make sure the grid takes up the entire viewport height */
-  background-color: #94abbd;
-  color: #f3f3f3;
-}
-
-/* Header styles */
-header {
-  display: flex;
-  align-items: flex-start; /* Change to align items at the top */
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #556e84;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 30px;
-}
-
-.logo-container {
-  display: flex;
-  align-items: center;
-  padding: 10px; /* Add padding to the logo container */
-}
-
-.logo {
-  width: 200px;
-  height: 100px;
-  border: 3px solid #fff; /* Add white border to the logo */
-  border-radius: 10px; /* Apply border radius to the logo */
-  padding: 10px; /* Add padding to the logo */
-}
-
-.logo img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-}
-
-nav ul {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  list-style: none;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.nav-list li {
-  margin: 0 1rem;
-  border: 3px solid #fff; /* Add white border to the logo */
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px; /* Apply border radius */
-  text-align: center;
-  padding: 10px; /* Add padding to create space between the li text and the border */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition properties */
+/* BACKGROUND IMAGE */
+.full-page {
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(/front-end/images/chatbox.jpg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
 }
 
-.nav-list li:hover {
-  background-color: #ffa66b; /* Change the background color on hover */
-  transform: scale(1.1); /* Apply a scale transform on hover */
-}
-
-.nav-list li a {
-  color: #fff; /* Set the link color to white */
-  text-decoration: none; /* Remove the underline */
-}
-
-.nav-list li .nav-icon {
-  width: 64px; /* Adjust the width as needed */
-  height: 64px; /* Adjust the height to match the logo */
-  margin-left: 2 rem; /* Add spacing between the text and the icon */
-  vertical-align: middle; /* Align the icon vertically */
-}
-
-/* Main content styles */
-main {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-  margin-bottom: 50px; /* Margin-bottom to create space between the main content and footer */
-}
-
-/* Footer styles */
-footer {
+/* NAVIGATION BAR */
+.navbar {
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 50px;
-  background-color: #556e84;
-  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 30px;
+  padding: 20px;
+  padding-left: 50px;
+  padding-right: 30px;
+  padding-top: 50px;
+}
+nav {
+  flex: 1;
+  text-align: right;
+}
+nav ul {
+  display: inline-block;
+  list-style: none;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-  main {
-    grid-template-columns: 1fr;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .nav-list li {
-    margin: 0.5rem 0;
-    margin-left: 0;
-  }
+/* STYLING LIST ELEMENTS */
+nav ul li {
+  display: inline-block;
+  margin-right: 70px;
+}
+nav ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  font-family: sans-serif;
+}
+nav ul li button {
+  font-size: 20px;
+  color: white;
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: sans-serif;
+}
+nav ul li button:hover {
+  color: aqua;
+}
+nav ul li a:hover {
+  color: aqua;
+}
+a {
+  text-decoration: none;
+  color: palevioletred;
+  font-size: 28px;
 }

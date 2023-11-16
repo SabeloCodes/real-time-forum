@@ -12,15 +12,19 @@ import (
 	// "golang.org/x/crypto/bcrypt"
 )
 
+// Struct used to upgrade HTTP connections to WebSocket connections.
 var upgrader = websocket.Upgrader{
 	ReadBufferSize: 1024,
 	WriteBufferSize: 1024,
 }
 
+//The DBase struct represents the database connection.
 type DBase struct{
 	DB *sql.DB
 }
 
+
+// The Init function to initialize the database tables.
 func Init (database *sql.DB){
 	database.Exec(`
 		CREATE TABLE IF NOT EXISTS "Users" (
@@ -96,10 +100,14 @@ func Init (database *sql.DB){
 
 }
 
+
+// Basic HTTP handler function that writes "Home Page!!" as the response when accessing the root path "/".
 func homePage (w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Home Page!!")
 }
 
+
+// For reading messages from the WebSocket connection and logging them. Also echoes back the received message to the client by writing it back to the WebSocket connection.
 func reader(conn *websocket.Conn){
 	for {
 		messageType, p, err := conn.ReadMessage()
@@ -117,6 +125,8 @@ func reader(conn *websocket.Conn){
 
 }
 
+
+// Handler function for the WebSocket endpoint
 func wsEndpoint (w http.ResponseWriter, r *http.Request) {
 	upgrader.CheckOrigin = func(r *http.Request) bool {return true}
 
@@ -125,25 +135,34 @@ func wsEndpoint (w http.ResponseWriter, r *http.Request) {
 		log.Println(err)
 	}
 
+	// Logs message when a client successfully connects
 	log.Println("Clinet Successfully Connected...")
 
+	// Calls the reader function to handle the WebSocket messages.
 	reader(ws)
 }
 
+
+// Setting up the HTTP routes. "/" with homePage handler function and "/ws" with wsEndpoint handler function
 func setupRoutes() {
 	http.HandleFunc("/", homePage)
 	http.HandleFunc("/ws", wsEndpoint)
 }
 
+
+// Open SQLite database using sql.Open function.
+// If any error occurs during opening of database, program logs error and terminates. 
 func main() {
 	database, err := sql.Open("sqlite3", "real-time-forum.db")
 	if err != nil{
 		log.Fatal(err)
 	}
 	
+	// The Init function is called to initialize the database tables.
 	Init(database)
 	defer database.Close()
 	
+	// The setupRoutes function is called to set up the HTTP routes.
 	setupRoutes()
 	log.Fatal(http.ListenAndServe(":8080", nil))
 	

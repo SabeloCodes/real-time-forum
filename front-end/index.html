@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Real-Time-Forum</title>
+    <title>Real-Time Forum</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,50 +18,29 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
-      <div class="logo-container">
-        <img src="./images/forum-logo.jpg" alt="logo" class="logo" />
+    <div class="full-page">
+      <div class="navbar">
+        <div>
+          <a href="#">Chat Box</a>
+        </div>
+        <nav>
+          <ul id="MenuItems">
+            <!-- <li><a href="#">Home</a></li> -->
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Posts</a></li>
+            <li><a href="#">Messages</a></li>
+            <li>
+              <button class="loginbtn" onclick="openLoginModal()">Login</button>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <nav>
-        <ul class="nav-list">
-          <li>
-            <a href="#"
-              >Registration and Login
-              <img
-                src="./images/icons/registered.png"
-                alt="Registration"
-                class="nav-icon"
-            /></a>
-          </li>
-          <li>
-            <a href="#"
-              >Posts and Comments
-              <img
-                src="./images/icons/comments.png"
-                alt="Comments"
-                class="nav-icon"
-            /></a>
-          </li>
-          <li>
-            <a href="#"
-              >Private Messages<img
-                src="./images/icons/message.png"
-                alt="Messages"
-                class="nav-icon"
-            /></a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    </div>
+    <div id="modal-container"></div>
+    <!-- Container for modal content -->
 
-    <main>
-      <!-- Add your forum content here -->
-    </main>
-
-    <footer>
-      <p>Real-time Forum &copy; 2023</p>
-    </footer>
-
-    <!-- Add your scripts here -->
+    <script src="app.js"></script>
+    <script src="/front-end/modal/login/script.js"></script>
+    <!-- Load the script handling login modal -->
   </body>
 </html>
